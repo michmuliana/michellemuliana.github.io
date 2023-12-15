@@ -37,7 +37,7 @@ function App() {
   const backgroundImage = `linear-gradient(
     rgba(255, 255, 255, 0.4), 
     rgba(255, 255, 255, 0.4)
-  ), url(${process.env.PUBLIC_URL}/asset/background-image.jpeg)`;
+  ), url(./asset/background-image.jpeg)`;
 
   return (
     <motion.div
@@ -130,7 +130,7 @@ function App() {
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 <Avatar
-                  src={process.env.PUBLIC_URL + "./asset/dev-avatar.jpeg"}
+                  src={"./asset/dev-avatar.jpeg"}
                   alt="Michelle Muliana"
                   sx={{
                     width: 130,
@@ -251,7 +251,6 @@ function App() {
                 >
                   <a
                     href={
-                      process.env.PUBLIC_URL +
                       "./resumes/Muliana_Michelle_Resume_2023.pdf"
                     }
                     target="_blank"
