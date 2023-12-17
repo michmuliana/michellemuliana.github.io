@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+import { useState } from "react";
 import {
   Avatar,
   Box,
@@ -19,7 +20,7 @@ import {
 } from "@mui/icons-material";
 import "./global.css";
 import ChangeTextComponent from "./change-text";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 
 function App() {
   const circleButtonStyle = {
@@ -38,6 +39,15 @@ function App() {
     rgba(255, 255, 255, 0.4), 
     rgba(255, 255, 255, 0.4)
   ), url(./asset/background-image.jpeg)`;
+
+  const [activeTab, setActiveTab] = useState("profile");
+
+  const tabs = [
+    { label: "Profile", value: "profile" },
+    { label: "Projects", value: "projects" },
+    { label: "Contact", value: "contact" },
+  ];
+
 
   return (
     <motion.div
@@ -250,9 +260,7 @@ function App() {
                   transition={{ duration: 0.6, delay: 1.2 }}
                 >
                   <a
-                    href={
-                      "./resumes/Muliana_Michelle_Resume_2023.pdf"
-                    }
+                    href={"./resumes/Muliana_Michelle_Resume_2023.pdf"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
