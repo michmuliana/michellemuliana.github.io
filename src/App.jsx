@@ -260,7 +260,7 @@ function App() {
                   transition={{ duration: 0.6, delay: 1.2 }}
                 >
                   <a
-                    href={"./resumes/Muliana_Michelle_Resume.pdf"}
+                    href={"./resumes/Muliana_Michelle_Resume_2024.pdf"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
