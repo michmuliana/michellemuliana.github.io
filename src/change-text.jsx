@@ -22,6 +22,7 @@ const changeTextComponent = () => {
         display: "inline-block",
         fontFamily: "Montserrat, sans-serif",
         padding: "21px",
+        textAlign: "center"
       }}
       repeat={Infinity}
     />
