@@ -1,19 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Draggable from "react-draggable";
-import {useMediaQuery} from "@mui/material";
-import Loader from "./components/Loader/Loader";
 
 import {
   Avatar,
-  Box,
   Card,
   CardHeader,
-  Button,
   Typography,
   IconButton,
   Grid,
-  Paper,
 } from "@mui/material";
 
 import {
@@ -24,7 +17,7 @@ import {
 } from "@mui/icons-material";
 import "./global.css";
 import ChangeTextComponent from "./change-text";
-import { motion, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
 function App() {
     
@@ -45,39 +38,6 @@ function App() {
     rgba(255, 255, 255, 0.4)
   ), url(./asset/background-image.jpeg)`;
 
-  const [activeTab, setActiveTab] = useState("profile");
-  const [position, setPosition] = useState({x:0, y:0});
-
-  const tabs = [
-    { label: "Profile", value: "profile" },
-    { label: "Projects", value: "projects" },
-    { label: "Contact", value: "contact" },
-  ];
-
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");
-
-  useEffect(() => {
-    if (isSmallScreen) {
-      setPosition()
-    }
-  })
-const handleDrag = (_, data) => {
-  const maxY = -155;
-  const newY = Math.max(data.y, maxY);
-
-  setPosition({ x: data.x, y: newY });
-};
-
-  const [loading, setLoading] = useState(true);
-
-  const handleLoadingFinish = () => {
-    setLoading(false);
-  };
-
-  if (loading) {
-    return <Loader onFinish={handleLoadingFinish} duration={2025} />;
-  }
-
   return (
     <motion.div>
       <Grid
@@ -91,7 +51,6 @@ const handleDrag = (_, data) => {
           padding: "50px",
         }}
       >
-        <Draggable handle=".draggable-header" position={isSmallScreen? {x:0, y:0} : position} onStop={handleDrag} disabled={isSmallScreen}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -288,7 +247,7 @@ const handleDrag = (_, data) => {
                     transition={{ duration: 0.6, delay: 1.2 }}
                   >
                     <a
-                      href={"./resumes/Muliana_Michelle_Resume_2024.pdf"}
+                      href={"./resumes/Muliana_Michelle_Resume_2025.pdf"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -313,7 +272,6 @@ const handleDrag = (_, data) => {
               </Grid>
             </Card>
           </motion.div>
-        </Draggable>
       </Grid>
     </motion.div>
   );
